@@ -1,42 +1,70 @@
+@font-face {
+    font-family: neu;
+    src: url("./NeueHaasDisplayMediu.ttf");
+}
+
+@font-face {
+    font-family: neu;
+    src: url("./NeueHaasDisplayLight.ttf");
+    font-weight:100;
+}
+
+@font-face {
+    font-family: neu;
+    src: url("./NeueHaasDisplayRoman.ttf");
+    font-weight:100;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: "neue haas grotesk display"
+}
+
 html, body{
     height: 100%;
     width: 100%;
-    margin:0;
 }
+
 #page1{
     background-color: #EFEAE3;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    position: relative
+    position: relative;
+    padding: 0 2vw;
 }
 
 nav{
     display: flex;
     align-items: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
     justify-content: space-between;
-    padding: 0vw 2vw 0vw 2vw;
+    padding: 0vw 2vw; /*This padding is for the nav bar*/
 }
 
 .nav-part2{
     display :flex;
     align-items: center;
-    padding: 2vw 2vw;
     gap: 2vw;
-    border-color: #000;
 }
 
-.nav-part2 h3{
-    border: 1px solid #bdb8b8;
+.nav-part2 h4{
+    border: 1px solid #0000003c;
     padding: 2.5vw 2.5vw;
     border-radius: 50px;
     font-size: 18px;
+    font-weight: 500;
+    color: #000000bb;
     position: relative;
     transition: all ease 0.4s;
     overflow: hidden;
-    
 }
 
-.nav-part2 h3::after{
+
+.nav-part2 h4::after{
     content :"";
     position: absolute;
     height: 100%;
@@ -49,7 +77,8 @@ nav{
     transition: all ease 0.5s;
 }
 
-.nav-part2 h3 a{
+
+.nav-part2 h4 a{
     text-decoration: None;
     color: black;
     z-index : 9;
@@ -57,26 +86,171 @@ nav{
 
 }
 
-.nav-part2 h3:hover::after {
+.nav-part2 h4:hover::after {
    bottom: 0;
    border-radius: 0px;
    overflow: hidden;
 }
 
-.nav-part2 h3:hover a{
+.nav-part2 h4:hover a{
     color:white;
 }
 
-#box2{
+#center{
     display: flex;
-    height: 65vh;
+    align-items: flex-end;
     width: 100%;
-    align-items: center;
+    height: 65vh;
     justify-content: space-between;
-    padding:0vh 2vh;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 2.5vw;
 }
 
-#box2 h1{
-    font-size:100px;
+#left h3{
+    font-size : 1.8vw;
+    width: 25vw;
+    line-height: 2vw;
+}
+
+#center h1{
+    font-size: 10vw;
+    line-height: 8vw;
     text-align: right;
+}
+
+#page1 video{
+    width: 100%;
+    border-radius: 30px;
+    margin-top: 4vw;
+    position: relative;
+    z-index: 100;
+}
+
+#hero-shape{
+    height: 46vw;
+    width:36vw;
+    position: absolute;
+    right:0;
+    top:65vw;
+}
+
+#hero1{
+    height:100%;
+    width: 100%;
+    animation-name: anime;
+    animation-duration:3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: orangered;
+    position: absolute;
+    filter: blur(25px);
+    background :linear-gradient(#FE320A, #FE570A);
+}
+#hero2{
+    height:30vw;
+    width: 30vw;
+    animation-name: anime2;
+    animation-duration:3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    border-radius: 50%;
+    background-color: orangered;
+    position: absolute;
+    filter: blur(25px);
+    background :linear-gradient(#FE320A, #FE570A);
+}
+
+#hero3{
+    height:30vw;
+    width: 30vw;
+    animation-name: anime3;
+    animation-duration:3s;
+    animation-timing-function: linear;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    border-radius: 50%;
+    background-color: orangered;
+    position: absolute;
+    filter: blur(25px);
+    background :linear-gradient(#FE320A, #FE570A);
+}
+
+@keyframes anime {
+    from{
+        transform: translate(-55%, -2%);
+    }
+    to{
+        transform: translate(0%, 10%);
+    }
+}
+
+@keyframes anime2 {
+    from{
+        transform: translate(5%, -5%);
+    }
+    to{
+        transform: translate(20%, 30%);
+    }
+}
+
+@keyframes anime3 {
+    from{
+        transform: translate(-55%, -2%);
+    }
+    to{
+        transform: translate(0%, 10%);
+    }
+}
+
+
+#page2{
+    background-color: #EFEAE3;
+    min-height: 100vh;
+    width: 100%;
+    /* position: relative; */
+    padding: 0 2vw;
+}
+
+
+#moving-text h1{
+    font-size: 9vw;
+    display: inline-block;
+}
+
+#gola{
+    height:20px;
+    width: 20px;
+    margin: 2vw 2vw;
+    border-radius: 50%;
+    background-color: #FE320A;
+    display: inline-block;
+}
+
+#moving-text::-webkit-scrollbar{
+    display: None;
+}
+
+#moving-text{
+   overflow-x:auto ;
+}
+
+#con{
+    white-space: nowrap;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
 }
